@@ -1,0 +1,38 @@
+body {
+    font-family: 'Rubik', 'Merriweather';
+    color: #FFFFFF;
+}
+
+.container{
+    display: flex;
+}
+
+.container__grow {
+    flex-grow: 1;
+}
+
+.container__center {
+    align-items: center;
+    justify-content: center;
+}
+ 
+.container__column {
+    flex-direction: column;
+}
+
+.container__row {
+    flex-basis: 50%;
+    flex-grow:1;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    
+}
+
+
+
+li {
+    display: block;
+}

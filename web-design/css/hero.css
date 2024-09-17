@@ -1,0 +1,36 @@
+section {
+    
+    padding:2rem 10%;
+}
+
+.vertical_padding {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.hero {
+    background-image:linear-gradient( rgba(0, 0, 0, 0.541), rgba(0, 0, 0, 0.3) ), url("/image/house.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 50vw;
+    
+}
+
+.hero__paragraph {
+    color: #FFF;
+    font-family: Rubik;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.hero__title {
+    color: #FFF;    
+    font-family: Merriweather;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 990;
+    line-height: normal;
+}

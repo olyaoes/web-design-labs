@@ -1,0 +1,48 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.logo__title {
+    color: #fff;
+    display: flex;
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-left: 10px;
+
+   
+    
+}
+
+
+.header__nav ul {
+    display: flex;
+}
+.header__nav-item {
+    margin-right: 60px;
+    
+}
+
+.header__contact {
+    border-radius: 5px;
+    padding: 12px 30px; 
+    color:#606B74;
+    background-color: #fff;
+    font-size: 20px;
+    
+}
+
+
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo__image{
+    background-image: url("/image/logo.svg");
+    width: 2rem;
+    height: 2rem;
+}
