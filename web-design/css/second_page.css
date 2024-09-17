@@ -1,0 +1,39 @@
+.sc__titles {
+    font-family: "Merriweather";
+    color: #222F33;
+    font-family: Merriweather;
+    font-size: 30px;
+    font-weight: 900; 
+}
+
+.sc_paragraph {
+    color: #646D70;
+    line-height: 2rem;
+    margin-bottom: 41px;
+}
+
+.sc_page {
+    flex-basis: 50%;
+    flex-grow: 1;
+    position: relative;
+  
+}
+
+.sc_image {
+    width: 354px;
+    height: 398.66px;
+}
+
+.no_vertical_padding {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.sc_button {
+    color: #606B74;
+    border: 2px solid #606B74;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 12px;
+    margin-top: 64px;
+}

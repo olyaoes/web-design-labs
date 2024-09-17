@@ -1,0 +1,26 @@
+.th_h {
+    font-family: Merriweather;
+    font-size: 30px;
+    font-weight: 900;
+    margin-bottom: 11px;
+}
+
+.container {
+    font-family: Rubik;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.third_page {
+    background-color: #26353B;
+    height: 250px;
+}
+
+.th_page {
+    margin-left: 2rem;
+}
+.th_page_test{
+    font-weight: 350;
+    color:var(--Greys-White, #FFF);
+}
