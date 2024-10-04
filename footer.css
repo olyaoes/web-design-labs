@@ -1,0 +1,73 @@
+footer {
+    background-color: #222F33;
+    color: #fff;
+    width: 100%;
+    height: 92px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p {
+    opacity: 0.6;
+    margin: 0;
+    font-size: 14px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.footer__paragraph {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .center {
+    position: absolute;
+    left: 50%;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+@media screen and (max-width: 799px) {
+    footer {
+        background-color: #222F33;
+        color: #fff;
+        width: 100%;
+        height: auto;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0px;
+    }
+    
+    footer p {
+        display: flex;
+        text-align: center;
+        justify-content: space-between;
+        align-content: space-between;
+        opacity: 0.6;
+        font-size: 14px;
+    }
+
+    footer .center img {
+        display: block;
+        margin: 0 auto; /* Вирівнювання логотипа по центру */
+        max-width: 100px; /* Можливе обмеження розміру логотипа */
+        height: auto;
+    }
+
+    footer a {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-content: center;
+        color: white;
+        text-decoration: none;
+    }
+}
+
