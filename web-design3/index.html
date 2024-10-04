@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Flower Shop</h1>
+
+        <div class="controls">
+            <input type="text" id="search-input" placeholder="Search for a flower..." oninput="searchCard()">
+            <button onclick="clearSearch()">Clear Search</button>
+        </div>
+
+        <div class="controls">
+            <label>
+                Sort by Price:
+                <input type="checkbox" id="sort-checkbox" onchange="sortCheckbox(this)">
+            </label>
+            <button onclick="alertAveragePrice()">Average Price</button>
+        </div>
+
+        <div id="showroom" class="flower-list"></div>
+
+        <div class="footer">
+            <p>Total Daily Expenses: $<span id="total-expenses">0</span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

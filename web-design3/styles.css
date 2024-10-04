@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffe4e1; /* Light pink background */
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #d45a83;
+}
+
+.controls {
+    display: flex;
+    justify-content: center; /* Вирівнюємо елементи посередині */
+    align-items: center; /* Вирівнюємо вертикально по центру */
+    margin-bottom: 20px;
+    gap: 10px; /* Відступ між елементами */
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 60%;
+    border: 1px solid #d45a83;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: #d45a83;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #c04a6e;
+}
+
+
+.flower-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#showroom {
+    display: flex;
+    flex-wrap: wrap; /* Дозволяє переносити картки на новий рядок */
+    justify-content: center; /* Центрує картки по горизонталі */
+    gap: 20px; /* Відступи між картками */
+    max-width: 1000px; /* Обмеження ширини контейнера */
+    margin: 0 auto; /* Центрування контейнера */
+}
+
+.flower-card {
+    flex: 1 1 30%; /* Кожна картка займає 30% ширини, щоб помістилося 3 картки на рядок */
+    max-width: 300px; /* Максимальна ширина картки */
+    padding: 10px;
+    background-color: #f8d7da;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flower-card img {
+    max-width: 100%; /* обмежуємо ширину зображення, щоб воно не виходило за межі картки */
+    height: auto; /* забезпечує збереження пропорцій */
+    max-height: 150px; /* обмежуємо висоту зображення */
+    border-radius: 8px;
+}
+
+.flower-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.flower-card p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #555;
+}
+
+.flower-card button {
+    padding: 5px 10px;
+    border: 1px solid #dc3545;
+    background-color: transparent;
+    color: #dc3545;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.flower-card button:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
