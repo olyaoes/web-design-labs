@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Flower Shop</h1>
+
+        <div class="controls">
+            <input type="text" id="search-input" placeholder="Search for a flower..." oninput="searchCard()">
+            <button onclick="clearSearch()">Clear Search</button>
+            <a href="create.html"><button>Create New Flower</button></a>
+            <a href="edit.html"><button>Edit Flower</button></a>
+        </div>
+
+        <div class="controls">
+            <label>
+                Sort by Price:
+                <input type="checkbox" id="sort-checkbox" onchange="sortCheckbox(this)">
+            </label>
+            <button onclick="alertAveragePrice()">Average Price</button>
+        </div>
+
+        <div id="showroom" class="flower-list"></div>
+
+        <div class="footer">
+            <p>Total Daily Expenses: $<span id="total-expenses">0</span></p>
+        </div>
+    </div>
+
+    <script>
+        class Flower {
+            constructor(id, name, price, description, image) {
+                this.id = id;
+                this.name = name;
+                this.price = price;
+                this.description = description;
+                this.image = image;
+            }
+        }
+
+        let showroomList = [];
+        let currentList = [];
+
+        // Завантажуємо дані з API при завантаженні сторінки
+        const loadData = async () => {
+            try {
+                const response = await fetch('http://localhost:3000/flowers');
+                if (!response.ok) throw new Error('Failed to fetch flowers');
+                
+                showroomList = await response.json();
+                drawList(showroomList);
+            } catch (error) {
+                console.error('Error loading flowers:', error);
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', loadData); // Завантажуємо дані під час ініціалізації сторінки
+
+        const drawList = (list) => {
+            const showroom = document.getElementById('showroom');
+            showroom.innerHTML = '';
+            let totalExpenses = 0;
+
+            list.forEach((el) => {
+                showroom.innerHTML += `
+                    <div id="showroom-${el.id}" class="flower-card">
+                        <img src="${el.image}" alt="${el.name}">
+                        <h3>${el.name}</h3>
+                        <p>Price: $${el.price}</p>
+                        <p>${el.description}</p>
+                        <button onClick="deleteCard(${el.id})">Delete</button>
+                    </div>
+                `;
+                totalExpenses += parseFloat(el.price);
+            });
+
+            document.getElementById('total-expenses').innerText = totalExpenses.toFixed(2);
+        };
+
+        const clearSearch = () => {
+            drawList(showroomList);
+        };
+
+        const searchCard = () => {
+            const search = document.getElementById('search-input').value.toLowerCase();
+            currentList = showroomList.filter((el) => el.name.toLowerCase().includes(search));
+            drawList(currentList);
+        };
+
+        const deleteCard = async (flowerId) => {
+            try {
+                await fetch(`http://localhost:3000/flowers/${flowerId}`, { method: 'DELETE' });
+                showroomList = showroomList.filter((el) => el.id !== flowerId); // Видаляємо з локального списку
+                drawList(showroomList);  // Перемальовуємо список квіток
+            } catch (error) {
+                console.error('Error deleting flower:', error);
+            }
+        };
+
+        const sortCheckbox = (checkbox) => {
+            if (checkbox.checked) {
+                currentList = [...showroomList];
+                currentList.sort((a, b) => a.price - b.price);
+                drawList(currentList);
+            } else {
+                drawList(showroomList);
+            }
+        };
+
+        const alertAveragePrice = () => {
+            if (showroomList.length === 0) {
+                alert('No flowers available to calculate the average price.');
+                return;
+            }
+            
+            const average = showroomList.reduce((acc, flower) => acc + parseFloat(flower.price), 0) / showroomList.length;
+            alert(`Average Price: $${average.toFixed(2)}`);
+        };
+    </script>
+</body>
+</html>

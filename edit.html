@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Flower</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Flower</h1>
+        <form id="edit-flower-form">
+            <label for="flower-select">Select Flower to Edit:</label>
+            <select id="flower-select" required></select>
+            
+            <label for="name">New Name:</label>
+            <input type="text" id="name" required>
+            
+            <label for="price">New Price:</label>
+            <input type="number" id="price" required>
+            
+            <label for="description">New Description:</label>
+            <input type="text" id="description" required>
+            
+            <label for="image">New Image URL:</label>
+            <input type="text" id="image" required>
+            
+            <button type="submit">Edit Flower</button>
+        </form>
+        <div id="message"></div> <!-- Для повідомлень про успіх чи помилки -->
+    </div>
+
+    <script>
+        // Завантаження списку квітів у вибір (select)
+        const loadFlowers = async () => {
+            try {
+                const response = await fetch('http://localhost:3000/flowers');
+                const flowers = await response.json();
+
+                const flowerSelect = document.getElementById('flower-select');
+                flowerSelect.innerHTML = ''; // Очищуємо список
+
+                flowers.forEach(flower => {
+                    const option = document.createElement('option');
+                    option.value = flower.id;
+                    option.text = flower.name;
+                    flowerSelect.appendChild(option);
+                });
+            } catch (error) {
+                console.error('Error loading flowers:', error);
+            }
+        };
+
+        // Завантаження квітів при ініціалізації
+        loadFlowers(); 
+
+        // Обробка форми редагування
+        document.getElementById('edit-flower-form').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const flowerId = document.getElementById('flower-select').value;
+            const updatedFlower = {
+                name: document.getElementById('name').value,
+                price: parseFloat(document.getElementById('price').value),
+                description: document.getElementById('description').value,
+                image: document.getElementById('image').value
+            };
+
+            try {
+                const response = await fetch(`http://localhost:3000/flowers/${flowerId}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(updatedFlower)
+                });
+
+                if (response.ok) {
+                    document.getElementById('message').textContent = 'Flower updated successfully!';
+                    loadFlowers(); // Оновлення списку після редагування
+                } else {
+                    document.getElementById('message').textContent = 'Error updating flower.';
+                }
+            } catch (error) {
+                document.getElementById('message').textContent = 'Network error: ' + error.message;
+            }
+        });
+    </script>
+</body>
+</html>
