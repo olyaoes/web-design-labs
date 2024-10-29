@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a New Flower</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Create a New Flower</h1>
+        <form id="create-flower-form">
+            <label class="flower-1" for="name">Name:</label>
+            <input class="input" type="text" id="name" required>
+            
+            <label class="flower-1" for="price">Price:</label>
+            <input class="input" type="number" id="price" required>
+            
+            <label class="flower-2" for="description">Description:</label>
+            <input class="input" type="text" id="description" required>
+            
+            <label class="flower-2" for="image">Image URL:</label>
+            <input class="input" type="text" id="image" required>
+            
+            <button type="submit">Add Flower</button>
+        </form>
+        <div id="message"></div> <!-- Для повідомлень про успіх чи помилки -->
+    </div>
+
+    <script>
+        document.getElementById('create-flower-form').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const flower = {
+                name: document.getElementById('name').value,
+                price: parseFloat(document.getElementById('price').value),
+                description: document.getElementById('description').value,
+                image: document.getElementById('image').value
+            };
+
+            try {
+                const response = await fetch('http://localhost:3000/flowers', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(flower)
+                });
+
+                if (response.ok) {
+                    document.getElementById('message').textContent = 'Flower added successfully!';
+                } else {
+                    document.getElementById('message').textContent = 'Error adding flower.';
+                }
+            } catch (error) {
+                document.getElementById('message').textContent = 'Network error: ' + error.message;
+            }
+        });
+    </script>
+</body>
+</html>
+
+
