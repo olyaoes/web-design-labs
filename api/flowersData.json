@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "imageUrl": "./img/rose.png",
+        "title": "Rose",
+        "description": "Classic red rose.",
+        "price": 90
+    },
+    {
+        "id": 2,
+        "imageUrl": "./img/tulip.png",
+        "title": "Tulip",
+        "description": "Bright and cheerful tulip.",
+        "price": 88
+    },
+    {
+        "id": 3,
+        "imageUrl": "./img/daisy.png",
+        "title": "Daisy",
+        "description": "Simple and beautiful daisy.",
+        "price": 60
+    }
+]
