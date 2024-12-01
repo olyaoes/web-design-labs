@@ -1,0 +1,56 @@
+/* Сторінка Success */
+.success-page {
+    padding: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.success-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.success-content {
+    padding: 30px;
+}
+
+.success-icon {
+    font-size: 80px;
+    color: #d87093;
+}
+
+.success-container h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+}
+
+.success-container p {
+    font-size: 18px;
+    margin: 20px 0;
+    color: #666;
+}
+
+.back-to-catalog-btn {
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    background-color: #d87093;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.back-to-catalog-btn:hover {
+    background-color: #f06292;
+}
+
+.back-to-catalog-btn:focus {
+    box-shadow: 0 0 5px 3px rgba(215, 112, 147, 0.5);
+}
