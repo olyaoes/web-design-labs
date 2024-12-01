@@ -1,0 +1,105 @@
+/* styles.css */
+
+/* Основні стилі для сторінки кошика */
+.cart-page {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #d87093; /* Рожевий колір для всього тексту на сторінці */
+}
+
+/* Контейнер для кошика */
+.cart-container {
+    text-align: center;
+}
+
+/* Список товарів у кошику */
+.cart-items-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+/* Стилі для кожного товару в кошику */
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Зображення товару */
+.cart-item-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+/* Деталі товару (назва, ціна) */
+.cart-item-details {
+    flex-grow: 1;
+    text-align: left;
+}
+
+/* Контейнери для кнопок плюс і мінус */
+.quantity-controls {
+    display: flex;
+    align-items: center;
+}
+
+/* Стилі для кнопок плюс та мінус */
+.quantity-btn {
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    padding: 10px;
+    margin: 0 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quantity-btn:hover {
+    background-color: #ddd;
+}
+
+/* Стиль для числа, яке показує кількість товару */
+.quantity {
+    font-size: 16px;
+    margin: 0 10px;
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+}
+
+/* Підсумки кошика */
+.cart-summary {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+/* Стиль для кнопки Back to Catalog та Continue */
+.cart-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.continue-btn {
+    background-color: rgb(255, 154, 237);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.continue-btn:hover {
+    background-color: rgb(255, 175, 220);
+}
+
