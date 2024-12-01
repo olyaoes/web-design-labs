@@ -1,0 +1,112 @@
+/* Сторінка Checkout */
+.checkout-page {
+    padding: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-title {
+    text-align: center; /* Центрування заголовка */
+    margin-top: 20px; /* Відступ зверху */
+    margin-bottom: 20px; /* Відступ знизу */
+    font-size: 2em; /* Розмір шрифту */
+    font-weight: bold; /* Жирний текст */
+}
+
+.content-container {
+    width: 100%;
+    max-width: 800px; /* Наприклад, обмеження ширини */
+    margin: 0 auto; /* Центрування блоку */
+    padding: 20px; /* Внутрішні відступи */
+}
+
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.form-field {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-field label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.form-field input {
+    padding: 12px;
+    border: 1px solid #d1d1d1;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-field input:focus {
+    border-color: #d87093;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Кнопки */
+.checkout-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.checkout-buttons button {
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Кнопка Go Back */
+.back-btn {
+    background-color: #f06292;
+    color: white;
+}
+
+.back-btn:hover {
+    background-color: #d87093;
+}
+
+.back-btn:focus {
+    box-shadow: 0 0 5px 3px rgba(215, 112, 147, 0.5);
+}
+
+/* Кнопка Continue */
+.continue-btn {
+    background-color: #d87093;
+    color: white;
+}
+
+.continue-btn:hover {
+    background-color: #f06292;
+}
+
+.continue-btn:focus {
+    box-shadow: 0 0 5px 3px rgba(215, 112, 147, 0.5);
+}
+
